@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Card = ({ card, selectionHandler, disabled, opened }) => {
   return (
     <div
@@ -8,14 +10,33 @@ const Card = ({ card, selectionHandler, disabled, opened }) => {
         }
       }}
     >
+      {/*<img*/}
+      {/*  className={`${opened ? "" : "[transform:rotateY(-90deg)]"} absolute duration-300`}*/}
+      {/*  src={card.imgUrl}*/}
+      {/*  alt={card.label}*/}
+      {/*  width={60}*/}
+      {/*/>*/}
+
       <img
-        className={`${opened ? "" : "[transform:rotateY(-90deg)]"} absolute duration-300`}
+        className={`absolute duration-300 ${opened ? "" : "[transform:rotateY(-90deg)]"} max-h-full max-w-full object-contain`}
         src={card.imgUrl}
         alt={card.label}
         width={60}
       />
     </div>
   );
+};
+
+// Добавление PropTypes
+Card.propTypes = {
+  card: PropTypes.shape({
+    imgUrl: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    matched: PropTypes.bool.isRequired,
+  }).isRequired,
+  selectionHandler: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  opened: PropTypes.bool.isRequired,
 };
 
 export default Card;
