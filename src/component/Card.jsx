@@ -17,12 +17,25 @@ const Card = ({ card, selectionHandler, disabled, opened }) => {
       {/*  width={60}*/}
       {/*/>*/}
 
+      {/*<img*/}
+      {/*  className={`absolute duration-300 ${opened ? "" : "[transform:rotateY(-90deg)]"} max-h-full max-w-full object-contain`}*/}
+      {/*  src={card.imgUrl}*/}
+      {/*  alt={card.label}*/}
+      {/*  width={60}*/}
+      {/*/>*/}
+
       <img
-        className={`absolute duration-300 ${opened ? "" : "[transform:rotateY(-90deg)]"} max-h-full max-w-full object-contain`}
+        className={`absolute duration-300 ${opened ? "" : "[transform:rotateY(-90deg)]"} h-10 w-10 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12`}
         src={card.imgUrl}
         alt={card.label}
         width={60}
       />
+
+      {/*<img*/}
+      {/*  className={`absolute duration-300 ${opened ? "" : "[transform:rotateY(-90deg)]"} h-10 w-10 sm:h-8 sm:w-8`}*/}
+      {/*  src={card.imgUrl}*/}
+      {/*  alt={card.label}*/}
+      {/*/>*/}
     </div>
   );
 };
