@@ -23,7 +23,7 @@ function App() {
         Start
       </button>
 
-      <div className="mx-auto my-8 grid max-w-xl grid-cols-5 gap-4">
+      <div className="mx-auto my-8 grid max-w-xl grid-cols-5 gap-2 sm:gap-4">
         {cards.map((card) => {
           return (
             <Card
